@@ -180,6 +180,10 @@ class Manager {
 
 						}
 						break;
+					case 'exclude_id':
+						$filter['key']   = 'post_id';
+						$filter['value'] = absint( $filter_val );
+						break;
 					default:
 
 						// allow filtering of non-catched filter key
@@ -190,7 +194,11 @@ class Manager {
 
 				// check if we've got a new filter
 				if ( ! empty( $filter['key'] ) ) {
-					$meta_query[] = $filter;
+					if ( $filter['key'] == 'post_id' ) {
+						$args['post__not_in'] = array($filter['value']);
+					} else {
+						$meta_query[] = $filter;
+					}
 				}
 
 			}

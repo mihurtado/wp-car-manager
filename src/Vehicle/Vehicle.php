@@ -56,6 +56,12 @@ abstract class Vehicle {
 	/** @var  int */
 	private $featured;
 
+	/** @var  int */
+	private $with_report;
+
+	/** @var String */
+	private $video_url;
+
 	/**
 	 * @return int
 	 */
@@ -391,4 +397,38 @@ abstract class Vehicle {
 		return ( '1' == $this->get_featured() );
 	}
 
+	/**
+	 * @return int
+	 */
+	public function get_with_report() {
+		return $this->with_report;
+	}
+
+	/**
+	 * @param int $with_report
+	 */
+	public function set_with_report( $with_report ) {
+		$this->with_report = $with_report;
+	}
+
+	/**
+	 * @return bool
+	 */
+	public function is_with_report() {
+		return ( '1' == $this->get_with_report() );
+	}
+
+	/**
+	 * @return String
+	 */
+	public function get_video_url() {
+		return $this->video_url;
+	}
+
+	/**
+	 * @param String $with_report
+	 */
+	public function set_video_url( $video_url ) {
+		$this->video_url = $video_url;
+	}
 }

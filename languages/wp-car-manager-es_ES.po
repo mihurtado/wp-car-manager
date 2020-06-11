@@ -163,7 +163,7 @@ msgstr "Una descripción corta del vehículo. No es necesario incluir extras, se
 
 #: includes/template-functions.php:247 src/Admin/MetaBox/CarData.php:14
 msgid "Car Data"
-msgstr "Datos del Coche"
+msgstr "Datos del auto"
 
 #: includes/template-functions.php:255
 msgid "(optional)"
@@ -210,7 +210,7 @@ msgstr "Marcador de posición"
 
 #: src/Admin/MetaBox/Gallery.php:14
 msgid "Car Gallery"
-msgstr "Galería de Coches"
+msgstr "Galería de autos"
 
 #: src/Admin/MetaBox/ListingData.php:14
 msgid "Listing Data"
@@ -261,15 +261,15 @@ msgstr "Marcas"
 
 #: src/Ajax/CreatePage.php:46 src/Assets.php:131
 msgid "Submit Car"
-msgstr "Grabar Coche"
+msgstr "Grabar auto"
 
 #: src/Ajax/CreatePage.php:51
 msgid "My Cars"
-msgstr "Mis Coches"
+msgstr "Mis autos"
 
 #: src/Ajax/CreatePage.php:54 src/Vehicle/PostType.php:30
 msgid "Cars"
-msgstr "Coches"
+msgstr "autos"
 
 #: src/Ajax/GetDashboard.php:67 src/Vehicle/PostStatus.php:202
 msgid "Expired"
@@ -574,7 +574,7 @@ msgstr "Selecciona Marca"
 
 #: src/RoleManager.php:21
 msgid "Car Seller"
-msgstr "Vendedor de Coches"
+msgstr "Vendedor de autos"
 
 #: src/Settings.php:39
 msgid "General"
@@ -776,15 +776,15 @@ msgstr "Selecciona la página donde ha ubicado el %s shorcode."
 
 #: src/Settings.php:174
 msgid "Car Dashboard Page"
-msgstr "Página de Tablero de Coches"
+msgstr "Página de Tablero de autos"
 
 #: src/Settings.php:181
 msgid "Car Listings Page"
-msgstr "Página de Anuncios de Coches"
+msgstr "Página de Anuncios de autos"
 
 #: src/SubmitCarHandler.php:253
 msgid "Preview Car"
-msgstr "Vista previa del Coche"
+msgstr "Vista previa del auto"
 
 #: src/SubmitCarHandler.php:329
 msgid "%s has been submitted successfully and will be visible once approved."
@@ -976,7 +976,7 @@ msgstr "Configuración"
 msgid ""
 "Thank you for using WP Car Manager! We'd like to help you setup the plugin "
 "correctly so you can start listing your cars as quickly as possible."
-msgstr "Gracias por usar WP Car Manager! Nos gustaría ayudarle a configurar el plugin de forma correcta, por lo tanto usted puede empezar ya a anunciar sus coches a la mayor brevedad."
+msgstr "Gracias por usar WP Car Manager! Nos gustaría ayudarle a configurar el plugin de forma correcta, por lo tanto usted puede empezar ya a anunciar sus autos a la mayor brevedad."
 
 #: src/Util/Onboarding.php:104
 msgid ""
@@ -992,15 +992,15 @@ msgstr "Página"
 #: src/Util/Onboarding.php:114 src/Vehicle/PostType.php:14
 #: src/Vehicle/PostType.php:15
 msgid "Car Listings"
-msgstr "Listado de Coches"
+msgstr "Listado de autos"
 
 #: src/Util/Onboarding.php:115
 msgid "The page containing your car listings"
-msgstr "La página que contiene sus anuncios de coches"
+msgstr "La página que contiene sus anuncios de autos"
 
 #: src/Util/Onboarding.php:123
 msgid "Submit Car Page"
-msgstr "Inscribir Coches en la Página"
+msgstr "Inscribir autos en la Página"
 
 #: src/Util/Onboarding.php:124
 msgid "Users can submit their own listings via this page"
@@ -1008,11 +1008,11 @@ msgstr "Los usuarios pueden inscribir sus propios anuncios en esta página"
 
 #: src/Util/Onboarding.php:132
 msgid "Car Dashboard"
-msgstr "Tablero de Coches"
+msgstr "Tablero de autos"
 
 #: src/Util/Onboarding.php:133
 msgid "An overview page of all cars created of logged in user"
-msgstr "Una página de la información de todos los coches creados del usuario conectado"
+msgstr "Una página de la información de todos los autos creados del usuario conectado"
 
 #: src/Util/Onboarding.php:143
 msgid "A Never5 Product"
@@ -1151,15 +1151,15 @@ msgstr "Vista Previa"
 
 #: src/Vehicle/PostType.php:16
 msgid "Parent Car:"
-msgstr "Coche Padre:"
+msgstr "auto Padre:"
 
 #: src/Vehicle/PostType.php:17
 msgid "All Car Listings"
-msgstr "Todos los coches Listados"
+msgstr "Todos los autos Listados"
 
 #: src/Vehicle/PostType.php:18
 msgid "Add New Car Listing"
-msgstr "Añadir un Nuevo Anuncio de Coche"
+msgstr "Añadir un Nuevo Anuncio de auto"
 
 #: src/Vehicle/PostType.php:19
 msgid "Add New Listing"
@@ -1167,27 +1167,27 @@ msgstr "Añadir un Nuevo Anuncio"
 
 #: src/Vehicle/PostType.php:20
 msgid "New Car"
-msgstr "Nuevo Coche"
+msgstr "Nuevo auto"
 
 #: src/Vehicle/PostType.php:21
 msgid "Edit Car"
-msgstr "Editar Coche"
+msgstr "Editar auto"
 
 #: src/Vehicle/PostType.php:22
 msgid "Update Car"
-msgstr "Actualizar Coche"
+msgstr "Actualizar auto"
 
 #: src/Vehicle/PostType.php:23
 msgid "View Car"
-msgstr "Ver Coche"
+msgstr "Ver auto"
 
 #: src/Vehicle/PostType.php:24
 msgid "Search Car"
-msgstr "Buscar Coche"
+msgstr "Buscar auto"
 
 #: src/Vehicle/PostType.php:25
 msgid "No cars found"
-msgstr "Coches no encontrados"
+msgstr "autos no encontrados"
 
 #: src/Vehicle/PostType.php:26
 msgid "Not found in Trash"
@@ -1211,11 +1211,11 @@ msgstr "Expira en"
 
 #: templates/dashboard/no-results.php:1 templates/listings/no-results.php:1
 msgid "We couldn't find any cars."
-msgstr "No hemos podido encontrar ningún coche."
+msgstr "No hemos podido encontrar ningún auto."
 
 #: templates/dashboard/not-logged-in.php:1
 msgid "Please sign in to view your car listings"
-msgstr "Por favor, logea para ver sus anuncios de coches"
+msgstr "Por favor, logea para ver sus anuncios de autos"
 
 #: templates/general/review-sign.php:1
 msgid "PENDING REVIEW"
@@ -1310,7 +1310,7 @@ msgstr "Anuncio Expirado"
 msgid ""
 "This listing is expired, please go to your car dashboard for more "
 "information."
-msgstr "Este anuncio está caducado , por favor vaya a su tablero de coches para obtener más información. ."
+msgstr "Este anuncio está caducado , por favor vaya a su tablero de autos para obtener más información. ."
 
 #: templates/single-vehicle/features.php:11
 msgid "Vehicle Features"
@@ -1374,7 +1374,7 @@ msgstr "Su Email"
 
 #: templates/submit-car-form/car-features.php:1
 msgid "Car Features"
-msgstr "Extras de Coches"
+msgstr "Extras de autos"
 
 #: templates/submit-car-form/disabled.php:2
 msgid "You do not have permission to post or edit this listing."
@@ -1430,7 +1430,7 @@ msgstr "http://www.wpcarmanager.com"
 #. Description of the plugin/theme
 msgid ""
 "The easiest way to manage, list and sell your cars online using WordPress."
-msgstr "La forma más fácil de administrar, listar y vender sus coches en línea usando WordPress ."
+msgstr "La forma más fácil de administrar, listar y vender sus autos en línea usando WordPress ."
 
 #. Author of the plugin/theme
 msgid "Never5"
@@ -1483,12 +1483,12 @@ msgstr "Expirado"
 #: src/Vehicle/PostType.php:12
 msgctxt "Post Type General Name"
 msgid "Car Listings"
-msgstr "Anuncios de Coches"
+msgstr "Anuncios de autos"
 
 #: src/Vehicle/PostType.php:13
 msgctxt "Post Type Singular Name"
 msgid "Car"
-msgstr "Coche"
+msgstr "auto"
 
 #: src/Vehicle/PostType.php:64
 msgctxt "post type slug"

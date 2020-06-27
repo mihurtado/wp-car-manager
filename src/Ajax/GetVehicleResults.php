@@ -76,6 +76,7 @@ class GetVehicleResults extends Ajax {
 		$adds = array();
 		if ($per_page >= 12 or $per_page == -1) {
 			for ($rep = 0; $rep <= 10; $rep++) {
+				$adds[] = array('title' => '¿Necesitas Financiamiento?', 'link' => 'https://www.checkeados.cl/contacto/', 'image' => 'add-delivery.png');
 				$adds[] = array('title' => '¿Necesitas Financiamiento?', 'link' => 'https://www.checkeados.cl/financiamiento/', 'image' => 'add-financiamiento.png');
 				$adds[] = array('title' => 'Puedes pagar con tarjeta', 'link' => 'https://www.checkeados.cl/pago-con-tarjeta/', 'image' => 'add-tarjeta.png');
 				$adds[] = array('title' => 'No te olvides del seguro', 'link' => 'https://crm.comparaonline.com/pub/form/11_seguro_de_auto_comparaonline/h5pp16/', 'image' => 'add-seguro.png');

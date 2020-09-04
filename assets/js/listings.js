@@ -169,6 +169,14 @@ WPCM_Listings.prototype.load_vehicles = function () {
 		}
 	} );
 
+	// hidden filters
+	jQuery.each( this.filters.find( '.wpcm-filter input[type=hidden]' ), function ( k, v ) {
+		var filter_val = jQuery( v ).val();
+		if ( !!filter_val ) {
+			args['filter_' + jQuery( v ).attr( 'name' )] = filter_val;
+		}
+	} );
+
 	// if make is locked, it's locked
 	if ( this.locked_make > 0 ) {
 		args['filter_make'] = this.locked_make;

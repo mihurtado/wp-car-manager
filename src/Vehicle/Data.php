@@ -72,7 +72,8 @@ class Data {
 				'placeholder' => __( 'e.g.', 'wp-car-manager' ) . ' ' . __( 'Grey', 'wp-car-manager' )
 			),
 			'body_style'   => array(
-				'type'        => 'text',
+				'type'        => 'select',
+				'options'			=> self::get_body_styles(),
 				'label'       => __( 'Body Style', 'wp-car-manager' ),
 				'key'         => 'body_style',
 				'required'    => false,
@@ -139,6 +140,36 @@ class Data {
 			'manual'         => __( 'Manual', 'wp-car-manager' ),
 			'semi-automatic' => __( 'Semi-Automatic', 'wp-car-manager' )
 		) );
+	}
+
+	/**
+	 * Get body_style possibilities
+	 *
+	 * @return array
+	 */
+	public static function get_body_styles() {
+		return array(
+			'sedan' => 'Sedán',
+			'suv' => 'SUV',
+			'hatchback' => 'Hatchback',
+			'coupe' => 'Coupe',
+			'convertible' => 'Convertible',
+			'pickup' => 'Pickup',
+			'furgon' => 'Furgón',
+			'station-wagon' => 'Station Wagon'
+		);
+	}
+
+	/**
+	 * Get body_style possibilities
+	 *
+	 * @return array
+	 */
+	public static function get_regions() {
+		return array(
+			'santiago' => 'Santiago',
+			'concepción' => 'Concepción'
+		);
 	}
 
 	/**

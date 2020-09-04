@@ -62,6 +62,9 @@ abstract class Vehicle {
 	/** @var String */
 	private $video_url;
 
+	/** @var String */
+	private $region;
+
 	/**
 	 * @return int
 	 */
@@ -426,9 +429,38 @@ abstract class Vehicle {
 	}
 
 	/**
-	 * @param String $with_report
+	 * @param String $video_url
 	 */
 	public function set_video_url( $video_url ) {
 		$this->video_url = $video_url;
+	}
+
+	/**
+	 * @return String
+	 */
+	public function get_region() {
+		return $this->region;
+	}
+
+	/**
+	 * Get formatted region
+	 *
+	 * @return String
+	 */
+	public function get_formatted_region() {
+		$regions = Data::get_regions();
+		$region  = $this->get_region();
+		if ( isset( $regions[ $region ] ) ) {
+			$region = $regions[ $region ];
+		}
+
+		return $region;
+	}
+
+	/**
+	 * @param String $region
+	 */
+	public function set_region( $region ) {
+		$this->region = $region;
 	}
 }

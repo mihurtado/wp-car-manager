@@ -37,7 +37,6 @@ class CustomColumns {
 		// unset columns
 		unset( $columns['taxonomy-wpcm_make_model'] );
 		unset( $columns['taxonomy-wpcm_features'] );
-		unset( $columns['author'] );
 		unset( $columns['date'] );
 		unset( $columns['title'] );
 

@@ -50,6 +50,25 @@ class ListingData extends MetaBox {
 					'key'      => 'featured',
 					'required' => false
 				),
+				'with_report'  => array(
+					'type'     => 'checkbox',
+					'label'    => 'Con Informe',
+					'key'      => 'with_report',
+					'required' => false
+				),
+				'video_url'  => array(
+					'type'     => 'text',
+					'label'    => 'Video URL',
+					'key'      => 'video_url',
+					'required' => false
+				),
+				'region'  => array(
+					'type'     => 'select',
+					'options'  => Vehicle\Data::get_regions(),
+					'label'    => 'Región',
+					'key'      => 'region',
+					'required' => false
+				)
 			)
 		) );
 
@@ -83,6 +102,11 @@ class ListingData extends MetaBox {
 			// set featured to 0 if not set (checkbox)
 			if ( ! isset( $_POST['wpcm-ld']['featured'] ) ) {
 				update_post_meta( $post->ID, 'wpcm_featured', '0' );
+			}
+
+			// set with_report to 0 if not set (checkbox)
+			if ( ! isset( $_POST['wpcm-ld']['with_report'] ) ) {
+				update_post_meta( $post->ID, 'wpcm_with_report', '0' );
 			}
 
 			// call for update of vehicle order here

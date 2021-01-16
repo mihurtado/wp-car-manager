@@ -60,6 +60,7 @@ add_action( 'wpcm_before_listings_results', 'wpcm_template_vehicle_listings_filt
  */
 add_action( 'wpcm_listings_vehicle_filters', 'wpcm_template_vehicle_listings_filters_make', 10 );
 add_action( 'wpcm_listings_vehicle_filters', 'wpcm_template_vehicle_listings_filters_model', 10 );
+// add_action( 'wpcm_listings_vehicle_filters', 'wpcm_template_vehicle_listings_filters_region', 10 );
 add_action( 'wpcm_listings_vehicle_filters', 'wpcm_template_vehicle_listings_filters_price', 15 );
 add_action( 'wpcm_listings_vehicle_filters', 'wpcm_template_vehicle_listings_filters_frdate', 15 );
 add_action( 'wpcm_listings_vehicle_filters', 'wpcm_template_vehicle_listings_filters_mileage', 15 );

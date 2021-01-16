@@ -106,6 +106,9 @@ class WordPressRepository implements VehicleRepository {
 		$data->doors             = get_post_meta( $post->ID, $pm_prefix . 'doors', true );
 		$data->sold              = get_post_meta( $post->ID, $pm_prefix . 'sold', true );
 		$data->featured          = get_post_meta( $post->ID, $pm_prefix . 'featured', true );
+		$data->with_report       = get_post_meta( $post->ID, $pm_prefix . 'with_report', true );
+		$data->video_url         = get_post_meta( $post->ID, $pm_prefix . 'video_url', true );
+		$data->region            = get_post_meta( $post->ID, $pm_prefix . 'region', true );
 
 		// wrap frdate in try-catch in case someone enters an incorrect date
 		try {
@@ -207,6 +210,9 @@ class WordPressRepository implements VehicleRepository {
 
 		// set featured
 		update_post_meta( $vehicle->get_id(), 'wpcm_featured', $vehicle->get_featured() );
+
+		// set featured
+		update_post_meta( $vehicle->get_id(), 'wpcm_with_report', $vehicle->get_with_report() );
 
 		// set vehicle meta-data
 		if ( ! empty( $fields ) ) {

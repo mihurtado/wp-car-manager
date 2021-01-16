@@ -187,6 +187,12 @@ if ( ! function_exists( 'wpcm_template_vehicle_listings_filters_model' ) ) {
 	}
 }
 
+if ( ! function_exists( 'wpcm_template_vehicle_listings_filters_region' ) ) {
+	function wpcm_template_vehicle_listings_filters_region() {
+		wp_car_manager()->service( 'template_manager' )->get_template_part( 'listings/filters/region' );
+	}
+}
+
 if ( ! function_exists( 'wpcm_template_vehicle_listings_filters_price' ) ) {
 	function wpcm_template_vehicle_listings_filters_price() {
 		wp_car_manager()->service( 'template_manager' )->get_template_part( 'listings/filters/price' );

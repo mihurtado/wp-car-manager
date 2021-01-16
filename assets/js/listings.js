@@ -19,6 +19,8 @@ var WPCM_Listings = function ( tgt ) {
 	this.default_sort = jQuery( tgt ).data( 'sort' );
 	this.condition = jQuery( tgt ).data( 'condition' );
 	this.featured = jQuery( tgt ).data( 'featured' );
+	this.per_page = jQuery( tgt ).data( 'per_page' );
+	this.exclude_id = jQuery( tgt ).data( 'exclude_id' );
 
 	// lock the overview to a single make
 	this.locked_make = 0;
@@ -167,6 +169,14 @@ WPCM_Listings.prototype.load_vehicles = function () {
 		}
 	} );
 
+	// hidden filters
+	jQuery.each( this.filters.find( '.wpcm-filter input[type=hidden]' ), function ( k, v ) {
+		var filter_val = jQuery( v ).val();
+		if ( !!filter_val ) {
+			args['filter_' + jQuery( v ).attr( 'name' )] = filter_val;
+		}
+	} );
+
 	// if make is locked, it's locked
 	if ( this.locked_make > 0 ) {
 		args['filter_make'] = this.locked_make;
@@ -190,6 +200,14 @@ WPCM_Listings.prototype.load_vehicles = function () {
 
 	if ( undefined != this.featured ) {
 		args['filter_featured'] = this.featured;
+	}
+
+	if ( undefined != this.per_page ) {
+		args['per_page'] = this.per_page;
+	}
+
+	if ( undefined != this.exclude_id ) {
+		args['filter_exclude_id'] = this.exclude_id;
 	}
 
 	// add spinner

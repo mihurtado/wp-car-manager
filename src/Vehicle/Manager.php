@@ -149,6 +149,23 @@ class Manager {
 							$filter['type']    = 'CHAR';
 						}
 						break;
+					case 'with_report':
+						if ( "true" === $filter_val ) {
+							$filter['key']     = 'wpcm_with_report';
+							$filter['value']   = '1';
+							$filter['compare'] = '=';
+							$filter['type']    = 'CHAR';
+						}
+						break;
+					case 'region':
+						$filter['key']   = 'wpcm_region';
+						$filter['value'] = sanitize_title( $filter_val );
+						$filter['type']  = 'CHAR';
+						break;
+					case 'body_style':
+						$filter['key']   = 'wpcm_body_style';
+						$filter['value'] = sanitize_title( $filter_val );
+						$filter['type']  = 'CHAR';
 					case 'featured':
 						$filter_val = ($filter_val=='true');
 						if ( true === $filter_val ) {
@@ -180,6 +197,10 @@ class Manager {
 
 						}
 						break;
+					case 'exclude_id':
+						$filter['key']   = 'post_id';
+						$filter['value'] = absint( $filter_val );
+						break;
 					default:
 
 						// allow filtering of non-catched filter key
@@ -190,7 +211,11 @@ class Manager {
 
 				// check if we've got a new filter
 				if ( ! empty( $filter['key'] ) ) {
-					$meta_query[] = $filter;
+					if ( $filter['key'] == 'post_id' ) {
+						$args['post__not_in'] = array($filter['value']);
+					} else {
+						$meta_query[] = $filter;
+					}
 				}
 
 			}

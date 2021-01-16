@@ -18,6 +18,21 @@ class Car extends MotorVehicle {
 	}
 
 	/**
+	 * Get formatted body style
+	 *
+	 * @return String
+	 */
+	public function get_formatted_body_style() {
+		$body_styles = Data::get_body_styles();
+		$body_style  = $this->get_body_style();
+		if ( isset( $body_styles[ $body_style ] ) ) {
+			$body_style = $body_styles[ $body_style ];
+		}
+
+		return $body_style;
+	}
+
+	/**
 	 * @param String $body_style
 	 */
 	public function set_body_style( $body_style ) {

@@ -38,8 +38,12 @@ class GetVehicleResults extends Ajax {
 		$sort = ( isset( $_GET['sort'] ) ) ? esc_attr( $_GET['sort'] ) : 'price-asc';
 
 		// set per page
-		$per_page = intval( wp_car_manager()->service( 'settings' )->get_option( 'listings_ppp' ) );
-
+		if (isset( $_GET['per_page'] ) ) {
+			$per_page = intval( esc_attr( $_GET['per_page'] ) );
+		} else {
+			$per_page = intval( wp_car_manager()->service( 'settings' )->get_option( 'listings_ppp' ) );
+		}
+		
 		// correct any funky zero listings per page. I mean, who wants 0 listings per page ...
 		if ( 0 === $per_page ) {
 			$per_page = - 1;
@@ -69,11 +73,27 @@ class GetVehicleResults extends Ajax {
 		// get total vehicle count for pagination
 		$total_vehicle_count = $vehicle_manager->get_total_vehicle_count_of_last_query();
 
+		$adds = array();
+		if ($per_page >= 12 or $per_page == -1) {
+			for ($rep = 0; $rep <= 10; $rep++) {
+				$adds[] = array('title' => '¿Necesitas Financiamiento?', 'link' => 'https://www.checkeados.cl/contacto/', 'image' => 'add-delivery.png');
+				$adds[] = array('title' => '¿Necesitas Financiamiento?', 'link' => 'https://www.checkeados.cl/financiamiento/', 'image' => 'add-financiamiento.png');
+				$adds[] = array('title' => 'Puedes pagar con tarjeta', 'link' => 'https://www.checkeados.cl/pago-con-tarjeta/', 'image' => 'add-tarjeta.png');
+				$adds[] = array('title' => 'No te olvides del seguro', 'link' => 'https://crm.comparaonline.com/pub/form/11_seguro_de_auto_comparaonline/h5pp16/', 'image' => 'add-seguro.png');
+				$adds[] = array('title' => 'Informe Técnico', 'link' => 'https://www.checkeados.cl/informe/', 'image' => 'add-informe.png');
+				$adds[] = array('title' => 'Descuento en mantenciones', 'link' => 'https://www.autu.cl/', 'image' => 'add-descuento-mantenciones.png');
+				$adds[] = array('title' => 'Gestión de transferencias', 'link' => '#', 'image' => 'add-gestion-de-transferencias.png');
+			}
+		}
+
 		// start output buffer
 		ob_start();
 
 		// check & loop
 		if ( count( $vehicles ) > 0 ) {
+
+			$vehicle_count = 0;
+			$adds_count = 0;
 
 			foreach ( $vehicles as $vehicle ) {
 
@@ -95,6 +115,14 @@ class GetVehicleResults extends Ajax {
 					$image       = sprintf( '<img src="%s" alt="%s" class="wpcm-listings-item-image" />', $placeholder, __( 'Placeholder', 'wp-car-manager' ) );
 				}
 
+				$add = false;
+
+				if ($adds_count * 6 < $vehicle_count) {
+					if (rand(1, (($adds_count + 1) * 6 - $vehicle_count)) == 1) {
+						$add = $adds[$adds_count];
+						$adds_count++;
+					}
+				}
 
 				// load template
 				wp_car_manager()->service( 'template_manager' )->get_template_part( 'listings/item', '', array(
@@ -105,8 +133,10 @@ class GetVehicleResults extends Ajax {
 					'price'       => $vehicle->get_formatted_price(),
 					'mileage'     => $vehicle->get_formatted_mileage(),
 					'frdate'      => $vehicle->get_formatted_frdate(),
-					'vehicle'     => $vehicle
+					'vehicle'     => $vehicle,
+					'add'			   	=> $add
 				) );
+				$vehicle_count++;
 			}
 
 		} else {

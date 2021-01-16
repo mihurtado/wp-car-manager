@@ -56,6 +56,15 @@ abstract class Vehicle {
 	/** @var  int */
 	private $featured;
 
+	/** @var  int */
+	private $with_report;
+
+	/** @var String */
+	private $video_url;
+
+	/** @var String */
+	private $region;
+
 	/**
 	 * @return int
 	 */
@@ -391,4 +400,67 @@ abstract class Vehicle {
 		return ( '1' == $this->get_featured() );
 	}
 
+	/**
+	 * @return int
+	 */
+	public function get_with_report() {
+		return $this->with_report;
+	}
+
+	/**
+	 * @param int $with_report
+	 */
+	public function set_with_report( $with_report ) {
+		$this->with_report = $with_report;
+	}
+
+	/**
+	 * @return bool
+	 */
+	public function is_with_report() {
+		return ( '1' == $this->get_with_report() );
+	}
+
+	/**
+	 * @return String
+	 */
+	public function get_video_url() {
+		return $this->video_url;
+	}
+
+	/**
+	 * @param String $video_url
+	 */
+	public function set_video_url( $video_url ) {
+		$this->video_url = $video_url;
+	}
+
+	/**
+	 * @return String
+	 */
+	public function get_region() {
+		return $this->region;
+	}
+
+	/**
+	 * Get formatted region
+	 *
+	 * @return String
+	 */
+	public function get_formatted_region() {
+		$regions = Data::get_regions();
+		$region  = $this->get_region();
+		if ( isset( $regions[ $region ] ) ) {
+			$region = $regions[ $region ];
+		}
+
+		return $region;
+	}
+
+	/**
+	 * @param String $region
+	 */
+	public function set_region( $region ) {
+		$this->region = $region;
+	}
 }

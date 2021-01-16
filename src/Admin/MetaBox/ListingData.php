@@ -62,6 +62,12 @@ class ListingData extends MetaBox {
 					'key'      => 'video_url',
 					'required' => false
 				),
+				'report_url'  => array(
+					'type'     => 'text',
+					'label'    => 'Informe URL',
+					'key'      => 'report_url',
+					'required' => false
+				),
 				'region'  => array(
 					'type'     => 'select',
 					'options'  => Vehicle\Data::get_regions(),

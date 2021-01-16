@@ -63,6 +63,9 @@ abstract class Vehicle {
 	private $video_url;
 
 	/** @var String */
+	private $report_url;
+
+	/** @var String */
 	private $region;
 
 	/**
@@ -433,6 +436,20 @@ abstract class Vehicle {
 	 */
 	public function set_video_url( $video_url ) {
 		$this->video_url = $video_url;
+	}
+
+	/**
+	 * @return String
+	 */
+	public function get_report_url() {
+		return $this->report_url;
+	}
+
+	/**
+	 * @param String $report_url
+	 */
+	public function set_report_url( $report_url ) {
+		$this->report_url = $report_url;
 	}
 
 	/**

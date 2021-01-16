@@ -108,6 +108,7 @@ class WordPressRepository implements VehicleRepository {
 		$data->featured          = get_post_meta( $post->ID, $pm_prefix . 'featured', true );
 		$data->with_report       = get_post_meta( $post->ID, $pm_prefix . 'with_report', true );
 		$data->video_url         = get_post_meta( $post->ID, $pm_prefix . 'video_url', true );
+		$data->report_url        = get_post_meta( $post->ID, $pm_prefix . 'report_url', true );
 		$data->region            = get_post_meta( $post->ID, $pm_prefix . 'region', true );
 
 		// wrap frdate in try-catch in case someone enters an incorrect date
